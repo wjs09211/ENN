@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EEN交通即時防災緊急通報系統</string>
+    <string name="btn_login_name">登入</string>
+    <string name="btn_register_name">註冊</string>
+</resources>

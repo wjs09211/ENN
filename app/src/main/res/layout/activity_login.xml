@@ -18,7 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/edit_password"
         android:maxLength="20"
-        android:hint="帳號"
+        android:hint="@string/txt_hint_account"
         android:singleLine="true"/>
 
     <EditText
@@ -31,7 +31,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="39dp"
         android:maxLength="20"
-        android:hint="密碼"
+        android:hint="@string/txt_hint_password"
         android:singleLine="true"/>
 
     <Button
@@ -47,7 +47,7 @@
         android:layout_width="130dp"
         android:layout_height="50dp"
         android:text="@string/btn_register_name"
-        android:id="@+id/btn_register"
+        android:id="@+id/btn_SignUp"
         android:layout_alignBottom="@+id/btn_login"
         android:layout_alignStart="@+id/edit_password" />
 </RelativeLayout>

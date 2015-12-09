@@ -12,4 +12,5 @@
     <string name="txt_SignUp_success">註冊成功</string>
     <string name="txt_SignUp_duplicate">帳號重複，請重新輸入</string>
     <string name="txt_Login_fail">帳號或密碼錯誤</string>
+    <string name="btn_main_picturReport_name">照片通報</string>
 </resources>

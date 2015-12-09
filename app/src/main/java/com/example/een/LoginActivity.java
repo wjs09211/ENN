@@ -76,9 +76,11 @@ public class LoginActivity extends AppCompatActivity {
                 JSONArray jsonArray = new JSONArray(response);
                 JSONObject jsonData = jsonArray.getJSONObject(0);
                 Log.e( "jsonData",  jsonData.getString("account") + "  " + jsonData.get("password"));
+                //暫存使用者帳號
                 SharedPreferences settings;
                 settings = getSharedPreferences("User",0);
                 settings.edit().putString("account", jsonData.getString("account")).apply();
+                //Go to MainActivity
                 Intent i = new Intent();
                 i.setClass(LoginActivity.this, MainActivity.class);
                 startActivity(i);

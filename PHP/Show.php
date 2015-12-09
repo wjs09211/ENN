@@ -11,7 +11,7 @@ require 'connect.php';
 	<center>            
         <table border="1" cellpadding="5" cellspacing="0" align="center">
             <tr>
-                <th>ID</th><th>account</th><th>image</th><th>location</th><th>reg_time</th>
+                <th>ID</th><th>account</th><th>image</th><th>location</th><th>reg_time</th><th>經度</th><th>緯度</th>
             </tr>
 <?php
 	$sql = 'SELECT * FROM android_accident_record ORDER BY ID DESC;';
@@ -25,7 +25,7 @@ require 'connect.php';
             		echo '<td><img src="' . $value . '" height="150"></td>';
             	}
             	else{
-                	echo '<td>' . $value . '</td>';
+                	echo '<td>' . urldecode($value) . '</td>';
             	}
             }
             echo '</tr>';

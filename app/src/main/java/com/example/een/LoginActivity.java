@@ -14,13 +14,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+///
+///登入功能
+///
 public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        Button btn_login = (Button)findViewById(R.id.btn_login);
+        Button btn_login = (Button)findViewById(R.id.btn_login); //登入按鈕
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        Button btnSignUp = (Button)findViewById(R.id.btn_SignUp);
+        Button btnSignUp = (Button)findViewById(R.id.btn_SignUp); //註冊按鈕
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,33 +41,29 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        //開啟定位
+        Intent intent = new Intent(this, GPSService.class);
+        startService(intent);
     }
-    /*@Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-
-        if (keyCode == KeyEvent.KEYCODE_BACK)
-        {
-            // Show home screen when pressing "back" button,
-            //  so that this app won't be closed accidentally
-            Intent intentHome = new Intent(Intent.ACTION_MAIN);
-            intentHome.addCategory(Intent.CATEGORY_HOME);
-            intentHome.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intentHome);
-            return true;
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }*/
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //關閉定位GPS Service
+        Intent intent = new Intent(this, GPSService.class);
+        stopService(intent);
+    }
     private void Login()
     {
         EditText edit_account = (EditText)findViewById(R.id.edit_account);
         EditText edit_password = (EditText)findViewById(R.id.edit_password);
         String account = edit_account.getText().toString();
         String password = edit_password.getText().toString();
-        Log.e("account",account);
-        String sql = "queryStr=SELECT%20*%20FROM%20android_account_info%20WHERE%20account=%27" + account + "%27%20AND%20password=%27" + password + "%27;";
+
+        //比對帳號密碼是否正確
         //String sql = "queryStr=SELECT * FROM android_account_info WHERE account='" + account + "' AND password='" + password + "';";
+        String sql = "queryStr=SELECT%20*%20FROM%20android_account_info%20WHERE%20account=%27" + account + "%27%20AND%20password=%27" + password + "%27;";
         //sql = URLEncoder.encode(sql);
+        //執行sql指令 然後得到response
         String response = DBHandler.query(sql);
         Log.e("response",response);
         if( response.equals("") || response.equals("\uFEFFnull")){

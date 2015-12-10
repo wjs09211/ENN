@@ -76,6 +76,7 @@ public class SignUpActivity extends AppCompatActivity {
             return pattern.matcher(str).matches();
         }
     }
+    //判斷重複
     private boolean checkDuplicate( String str){
         String sql = "queryStr=SELECT%20*%20FROM%20android_account_info%20WHERE%20account=%27" + str + "%27;";
         String response = DBHandler.query(sql);

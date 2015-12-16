@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="@string/SignUp_Screen"
         android:id="@+id/textView"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="29dp"
         android:textSize="30dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -39,12 +39,12 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:id="@+id/edit_SignUp_account"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="23dp"
         android:maxLength="20"
         android:hint="@string/txt_hint_account"
-        android:singleLine="true"/>
+        android:singleLine="true"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:layout_width="300dp"
@@ -52,21 +52,20 @@
         android:inputType="textPassword"
         android:ems="10"
         android:id="@+id/edit_SignUp_password"
-        android:layout_below="@+id/edit_SignUp_account"
-        android:layout_alignStart="@+id/edit_SignUp_account"
-        android:layout_marginTop="66dp"
         android:maxLength="20"
         android:hint="@string/txt_hint_password"
-        android:singleLine="true"/>
+        android:singleLine="true"
+        android:layout_below="@+id/txt_SignUp_account_error"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:text="@string/btn_OK"
         android:id="@+id/btn_Sign_OK"
-        android:layout_below="@+id/edit_SignUp_password"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp" />
+        android:layout_marginBottom="27dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -85,5 +84,45 @@
         android:layout_below="@+id/textView3"
         android:layout_alignStart="@+id/textView3"
         android:textColor="#ff0000" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_SignUp_name"
+        android:layout_marginTop="24dp"
+        android:maxLength="20"
+        android:hint="@string/txt_hint_name"
+        android:singleLine="true"
+        android:layout_below="@+id/txt_SignUp_password_error"
+        android:layout_alignStart="@+id/txt_SignUp_password_error" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edit_SignUp_phone"
+        android:layout_marginTop="32dp"
+        android:maxLength="20"
+        android:hint="@string/txt_hint_phone"
+        android:singleLine="true"
+        android:layout_below="@+id/edit_SignUp_name"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_SignUp_phone_error_message"
+        android:id="@+id/txt_SignUp_phone_error"
+        android:textColor="#ff0000"
+        android:layout_above="@+id/btn_Sign_OK"
+        android:layout_alignStart="@+id/edit_SignUp_phone" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_SignUp_name_error_message"
+        android:id="@+id/txt_SignUp_name_error"
+        android:textColor="#ff0000"
+        android:layout_below="@+id/edit_SignUp_name"
+        android:layout_alignStart="@+id/edit_SignUp_name" />
 
 </RelativeLayout>

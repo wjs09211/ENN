@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private String str_User = "";
     private TextView txt_main_user;
     private Button btn_pictureReport;
+    private Button btn_mapInfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        btn_mapInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.setClass(MainActivity.this, MapActivity.class);
+                startActivity(i);
+            }
+        });
     }
     void initComponent(){
         //取得使用者帳號　從SharedPreferences中取得
@@ -39,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         txt_main_user = (TextView)findViewById(R.id.txt_main_user);
         txt_main_user.setText(str_User + "，您好");
         btn_pictureReport = (Button)findViewById(R.id.btn_main_pictureReport);
+        btn_mapInfo = (Button)findViewById(R.id.btn_main_mapInfo);
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

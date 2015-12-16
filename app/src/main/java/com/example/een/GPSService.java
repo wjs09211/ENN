@@ -69,12 +69,14 @@ public class GPSService extends Service {
     }
     private void getLocation(Location location)
     {
-        Double longitude = location.getLongitude();	//取得經度
-        Double latitude = location.getLatitude();	//取得緯度
-        Log.e("Change",""+longitude);
-        Log.e("Change",""+latitude);
-        settings.edit().putString("longitude", longitude + "").apply();
-        settings.edit().putString("latitude", latitude + "").apply();
+        if(location != null ) {
+            Double longitude = location.getLongitude();    //取得經度
+            Double latitude = location.getLatitude();    //取得緯度
+            Log.e("Change", "" + longitude);
+            Log.e("Change", "" + latitude);
+            settings.edit().putString("longitude", longitude + "").apply();
+            settings.edit().putString("latitude", latitude + "").apply();
+        }
     }
     LocationListener locationListener = new LocationListener() {
         @Override

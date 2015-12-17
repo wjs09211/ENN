@@ -17,6 +17,7 @@ import java.net.URL;
 public class DBHandler {
 
     //網站
+
     public final static String sleepUrl = "http://sleep-sleepsleep.rhcloud.com/test/query_db.php?";
 
     public DBHandler(){}

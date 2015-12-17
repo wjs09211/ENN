@@ -17,7 +17,11 @@
     <string name="txt_SignUp_duplicate">帳號重複，請重新輸入</string>
     <string name="txt_Login_fail">帳號或密碼錯誤</string>
     <string name="txt_WiFi_fail">網路不穩</string>
+    <string name="txt_NoRecord">查無紀錄</string>
+    <string name="txt_ReportRecord_title">通報紀錄</string>
     <string name="btn_main_picturReport_name">照片通報</string>
     <string name="btn_main_mapInfo_name">道路狀況</string>
+    <string name="btn_main_ReportRecord_name">通報紀錄</string>
+    <string name="btn_main_logout_name">登出</string>
     <string name="title_activity_map">Map</string>
 </resources>

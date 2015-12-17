@@ -48,7 +48,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-        handler.postDelayed(update, 2000);
+        handler.postDelayed(update, 500);
     }
 
 
@@ -88,7 +88,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
                 .build();
         // Animate the change in camera view over 2 seconds
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition),
-                2000, null);
+                500, null);
     }
 
     //標記發生意外的地點
@@ -99,7 +99,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
         String response = DBHandler.query(sql);
         Log.e("response",response);
         if( response.equals("") || response.equals("\uFEFFnull")){
-            Toast.makeText(MapActivity.this, getString(R.string.txt_WiFi_fail), Toast.LENGTH_SHORT).show();
+            Toast.makeText(MapActivity.this, getString(R.string.txt_NoRecord), Toast.LENGTH_SHORT).show();
         }
         else{
             try {
@@ -149,7 +149,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback 
             // TODO Auto-generated method stub
             //要做的事情，这里再次调用此Runnable对象，以实现每两秒实现一次的定时器操作
             updateMyLocation();
-            handler.postDelayed(this, 2000);
+            handler.postDelayed(this, 500);
         }
     };
     @Override

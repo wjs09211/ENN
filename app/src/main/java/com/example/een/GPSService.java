@@ -63,8 +63,8 @@ public class GPSService extends Service {
         Location location = locationMgr.getLastKnownLocation(provider);
         getLocation(location);
 
-        int minTime = 5000;//ms
-        int minDist = 5;//meter
+        int minTime = 500;//ms
+        int minDist = 1;//meter
         locationMgr.requestLocationUpdates(provider, minTime, minDist, locationListener);
     }
     private void getLocation(Location location)
@@ -94,7 +94,6 @@ public class GPSService extends Service {
 
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras) {
-            Log.e("Status","Status");
         }
     };
 }

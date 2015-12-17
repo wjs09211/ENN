@@ -1,7 +1,10 @@
 package com.example.een;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.location.LocationManager;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,9 +44,17 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        //開啟定位
-        Intent intent = new Intent(this, GPSService.class);
-        startService(intent);
+        //判斷是否開啟GPS定位
+        LocationManager status = (LocationManager) (this.getSystemService(Context.LOCATION_SERVICE));
+        if (status.isProviderEnabled(LocationManager.GPS_PROVIDER) || status.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+            Intent intent = new Intent(this, GPSService.class);
+            startService(intent);
+        } else {
+            Toast.makeText(this, "請開啟定位服務，開啟後重啟程式", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));	//開啟設定頁面
+        }
+        //開啟定位服務
+
     }
     @Override
     protected void onDestroy() {

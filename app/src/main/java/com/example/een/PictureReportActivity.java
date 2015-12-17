@@ -94,8 +94,8 @@ public class PictureReportActivity extends AppCompatActivity {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            finish();
         }
+        finish();
     }
     //上傳
     private void uploadFile()

@@ -92,7 +92,7 @@ public class SignUpActivity extends AppCompatActivity {
             //成功註冊
             //queryStr=INSERT INTO android_account_info (account, password, name, phone_number)VALUES ('str_account', 'str_account', 'str_name', 'str_phone');
             DBHandler.query("queryStr=INSERT%20INTO%20android_account_info%20(account,%20password,%20name,%20phone_number)%20" +
-                    "VALUES%20(%27" + str_account + "%27,%20%27" + str_account + "%27" +
+                    "VALUES%20(%27" + str_account + "%27,%20%27" + str_password + "%27" +
                     ",%20%27" + str_name + "%27,%20%27" + str_phone + "%27);");
             Toast.makeText(SignUpActivity.this, getString(R.string.txt_SignUp_success), Toast.LENGTH_SHORT).show();
             finish();

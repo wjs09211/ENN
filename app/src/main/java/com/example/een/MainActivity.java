@@ -17,11 +17,14 @@ public class MainActivity extends AppCompatActivity {
     private TextView txt_main_user;
     private Button btn_pictureReport;
     private Button btn_mapInfo;
+    private Button btn_reportRecord;
+    private Button btn_logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initComponent();
+        //Go to PictureReportActivity
         btn_pictureReport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        //Go to MapActivity
         btn_mapInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -38,6 +42,27 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        // Go to ReportRecordActivity
+        btn_reportRecord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.setClass(MainActivity.this, ReportRecordActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("account",str_User);//傳遞String
+                i.putExtras(bundle);
+                startActivity(i);
+            }
+        });
+        btn_logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent();
+                i.setClass(MainActivity.this, LoginActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
     void initComponent(){
         //取得使用者帳號　從SharedPreferences中取得
@@ -49,6 +74,8 @@ public class MainActivity extends AppCompatActivity {
         txt_main_user.setText(str_User + "，您好");
         btn_pictureReport = (Button)findViewById(R.id.btn_main_pictureReport);
         btn_mapInfo = (Button)findViewById(R.id.btn_main_mapInfo);
+        btn_reportRecord = (Button)findViewById(R.id.btn_main_ReportRecord);
+        btn_logout = (Button)findViewById(R.id.btn_main_logout);
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

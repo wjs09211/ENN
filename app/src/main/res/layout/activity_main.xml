@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.een.MainActivity">
+    tools:context="com.example.een.MainActivity"
+    android:background="@color/colorBackground">
 
     <LinearLayout
         android:orientation="vertical"
@@ -15,7 +16,8 @@
         android:layout_height="match_parent"
         android:weightSum="1"
         android:layout_below="@+id/txt_main_user"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:background="@color/colorBackground">
 
         <Button
             android:layout_width="200dp"
@@ -24,7 +26,9 @@
             android:id="@+id/btn_main_pictureReport"
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.2"
-            android:singleLine="false" />
+            android:singleLine="false"
+            android:textColor="@color/colorText"
+            android:background="@color/colorButton" />
 
         <Button
             android:layout_width="200dp"
@@ -32,7 +36,9 @@
             android:text="@string/btn_main_mapInfo_name"
             android:id="@+id/btn_main_mapInfo"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.20" />
+            android:layout_weight="0.20"
+            android:textColor="@color/colorText"
+            android:background="@color/colorButton" />
 
         <Button
             android:layout_width="200dp"
@@ -40,7 +46,9 @@
             android:text="@string/btn_main_ReportRecord_name"
             android:id="@+id/btn_main_ReportRecord"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:textColor="@color/colorText"
+            android:background="@color/colorButton" />
 
         <Button
             android:layout_width="200dp"
@@ -48,7 +56,9 @@
             android:text="@string/btn_main_logout_name"
             android:id="@+id/btn_main_logout"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.2" />
+            android:layout_weight="0.2"
+            android:textColor="@color/colorText"
+            android:background="@color/colorButton" />
     </LinearLayout>
 
     <TextView
@@ -58,5 +68,6 @@
         android:id="@+id/txt_main_user"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
-        android:textSize="16dp" />
+        android:textSize="16dp"
+        android:textColor="@color/colorText" />
 </RelativeLayout>

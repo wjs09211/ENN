@@ -14,7 +14,8 @@
             android:text="txt_date"
             android:id="@+id/txt_date"
             android:layout_alignParentTop="true"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:textColor="@color/colorText" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -22,7 +23,8 @@
             android:text="New Text"
             android:id="@+id/txt_location"
             android:layout_below="@+id/txt_date"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:textColor="@color/colorText" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -30,6 +32,7 @@
             android:text="New Text"
             android:id="@+id/txt_state"
             android:layout_below="@+id/txt_location"
-            android:textSize="16dp" />
+            android:textSize="16dp"
+            android:textColor="@color/colorText" />
     </RelativeLayout>
 </LinearLayout>

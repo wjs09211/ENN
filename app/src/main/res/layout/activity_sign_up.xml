@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".SignUpActivity">
+    tools:context=".SignUpActivity"
+    android:background="@color/colorBackground">
 
     <TextView
         android:layout_width="wrap_content"
@@ -17,7 +18,8 @@
         android:layout_marginTop="29dp"
         android:textSize="30dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorText" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -25,7 +27,9 @@
         android:text="@string/txt_SignUp_input_info"
         android:id="@+id/textView2"
         android:layout_below="@+id/edit_SignUp_account"
-        android:layout_alignStart="@+id/edit_SignUp_account" />
+        android:layout_alignStart="@+id/edit_SignUp_account"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorText" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +37,9 @@
         android:text="@string/txt_SignUp_input_info"
         android:id="@+id/textView3"
         android:layout_below="@+id/edit_SignUp_password"
-        android:layout_alignStart="@+id/edit_SignUp_password" />
+        android:layout_alignStart="@+id/edit_SignUp_password"
+        android:textColorHint="@color/colorText"
+        android:textColor="@color/colorText" />
 
     <EditText
         android:layout_width="300dp"
@@ -44,7 +50,9 @@
         android:hint="@string/txt_hint_account"
         android:singleLine="true"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorHint" />
 
     <EditText
         android:layout_width="300dp"
@@ -56,7 +64,9 @@
         android:hint="@string/txt_hint_password"
         android:singleLine="true"
         android:layout_below="@+id/txt_SignUp_account_error"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColorHint="@color/colorHint"
+        android:textColor="@color/colorText" />
 
     <Button
         android:layout_width="150dp"
@@ -94,7 +104,9 @@
         android:hint="@string/txt_hint_name"
         android:singleLine="true"
         android:layout_below="@+id/txt_SignUp_password_error"
-        android:layout_alignStart="@+id/txt_SignUp_password_error" />
+        android:layout_alignStart="@+id/txt_SignUp_password_error"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorHint" />
 
     <EditText
         android:layout_width="300dp"
@@ -105,7 +117,9 @@
         android:hint="@string/txt_hint_phone"
         android:singleLine="true"
         android:layout_below="@+id/edit_SignUp_name"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/colorText"
+        android:textColorHint="@color/colorHint" />
 
     <TextView
         android:layout_width="wrap_content"

@@ -94,6 +94,7 @@ public class ReportRecordActivity extends AppCompatActivity {
         public void handleMessage(Message msgg) {
             switch(msgg.what){
                 case 1:
+                    Log.e("updataListView","updataListView");
                     updataListView();//更新listView
                     break;
             }
@@ -103,8 +104,9 @@ public class ReportRecordActivity extends AppCompatActivity {
     public void updataListView() {
         ListView listView;
         listView = (ListView) findViewById(R.id.listView);
-        MyAdapter adapter = new MyAdapter(this, recordList);
+        MyAdapter adapter = new MyAdapter(this, recordList, listView );
         listView.setAdapter(adapter);
+        System.gc();
     }
 
     public void showToast(final String toast)   //把它寫成function  有些時候可以避免Bug 例如在thread裡使用他

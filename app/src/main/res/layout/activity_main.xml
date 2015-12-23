@@ -17,48 +17,64 @@
         android:weightSum="1"
         android:layout_below="@+id/txt_main_user"
         android:layout_alignParentEnd="true"
-        android:background="@color/colorBackground">
+        android:background="@color/colorBackground"
+        android:layout_marginTop="30dp">
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_main_picturReport_name"
             android:id="@+id/btn_main_pictureReport"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.2"
-            android:singleLine="false"
+            android:layout_weight="0.1"
             android:textColor="@color/colorText"
-            android:background="@color/colorButton" />
+            android:background="@color/colorButton"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="30dp"
+            android:drawableLeft="@drawable/camera"
+            android:paddingLeft="30dp"
+            android:paddingRight="78dp" />
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_main_mapInfo_name"
             android:id="@+id/btn_main_mapInfo"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.20"
+            android:layout_weight="0.1"
             android:textColor="@color/colorText"
-            android:background="@color/colorButton" />
+            android:background="@color/colorButton"
+            android:layout_marginBottom="20dp"
+            android:textSize="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="78dp"
+            android:drawableLeft="@drawable/car_main"/>
 
         <Button
-            android:layout_width="200dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_main_ReportRecord_name"
             android:id="@+id/btn_main_ReportRecord"
             android:layout_gravity="center_horizontal"
-            android:layout_weight="0.2"
+            android:layout_weight="0.1"
             android:textColor="@color/colorText"
-            android:background="@color/colorButton" />
+            android:background="@color/colorButton"
+            android:layout_marginBottom="20dp"
+            android:textSize="30dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="78dp"
+            android:drawableLeft="@drawable/record"/>
 
-        <Button
-            android:layout_width="200dp"
+        <ImageButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_main_logout_name"
             android:id="@+id/btn_main_logout"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="0.2"
+            android:layout_weight="0.1"
             android:textColor="@color/colorText"
-            android:background="@color/colorButton" />
+            android:textSize="30dp"
+            android:src="@drawable/logout"
+            android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
     <TextView
@@ -66,8 +82,29 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/txt_main_user"
+        android:textSize="24dp"
+        android:textColor="@color/colorText"
+        android:layout_marginTop="23dp"
+        android:textStyle="bold"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:textSize="16dp"
-        android:textColor="@color/colorText" />
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_main_shit_R"
+        android:src="@drawable/shit"
+        android:paddingLeft="10dp"
+        android:layout_alignTop="@+id/txt_main_user"
+        android:layout_toEndOf="@+id/txt_main_user" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/img_main_shit_L"
+        android:src="@drawable/shit"
+        android:paddingLeft="0dp"
+        android:paddingRight="10dp"
+        android:layout_alignTop="@+id/txt_main_user"
+        android:layout_toStartOf="@+id/txt_main_user" />
 </RelativeLayout>

@@ -75,7 +75,8 @@
         android:id="@+id/btn_Sign_OK"
         android:layout_marginBottom="27dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorButton" />
 
     <TextView
         android:layout_width="wrap_content"

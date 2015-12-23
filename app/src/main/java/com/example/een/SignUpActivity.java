@@ -26,6 +26,7 @@ public class SignUpActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        setTitle(R.string.txt_SignUpActivity_title);
         initComponent();
         btn_OK.setOnClickListener(new View.OnClickListener() {
             @Override

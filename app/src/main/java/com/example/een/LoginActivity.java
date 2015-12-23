@@ -4,11 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -25,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getSupportActionBar().setDisplayShowTitleEnabled(false);
         setContentView(R.layout.activity_login);
         Button btn_login = (Button)findViewById(R.id.btn_login); //登入按鈕
         btn_login.setOnClickListener(new View.OnClickListener() {
@@ -65,39 +69,50 @@ public class LoginActivity extends AppCompatActivity {
     }
     private void Login()
     {
-        EditText edit_account = (EditText)findViewById(R.id.edit_account);
-        EditText edit_password = (EditText)findViewById(R.id.edit_password);
-        String account = edit_account.getText().toString();
-        String password = edit_password.getText().toString();
+        if(isInternetConnected()) {
+            EditText edit_account = (EditText) findViewById(R.id.edit_account);
+            EditText edit_password = (EditText) findViewById(R.id.edit_password);
+            String account = edit_account.getText().toString();
+            String password = edit_password.getText().toString();
 
-        //比對帳號密碼是否正確
-        //String sql = "queryStr=SELECT * FROM android_account_info WHERE account='" + account + "' AND password='" + password + "';";
-        String sql = "queryStr=SELECT%20*%20FROM%20android_account_info%20WHERE%20account=%27" + account + "%27%20AND%20password=%27" + password + "%27;";
-        //sql = URLEncoder.encode(sql);
-        //執行sql指令 然後得到response
-        String response = DBHandler.query(sql);
-        Log.e("response",response);
-        if( response.equals("") || response.equals("\uFEFFnull")){
-            // login fail
-            Toast.makeText(LoginActivity.this, getString(R.string.txt_Login_fail), Toast.LENGTH_SHORT).show();
-        }
-        else{
-            try {
-                JSONArray jsonArray = new JSONArray(response);
-                JSONObject jsonData = jsonArray.getJSONObject(0);
-                Log.e( "jsonData",  jsonData.getString("account") + "  " + jsonData.get("password"));
-                //暫存使用者帳號
-                SharedPreferences settings;
-                settings = getSharedPreferences("User",0);
-                settings.edit().putString("account", jsonData.getString("account")).apply();
-                //Go to MainActivity
-                Intent i = new Intent();
-                i.setClass(LoginActivity.this, MainActivity.class);
-                startActivity(i);
+            //比對帳號密碼是否正確
+            //String sql = "queryStr=SELECT * FROM android_account_info WHERE account='" + account + "' AND password='" + password + "';";
+            String sql = "queryStr=SELECT%20*%20FROM%20android_account_info%20WHERE%20account=%27" + account + "%27%20AND%20password=%27" + password + "%27;";
+            //sql = URLEncoder.encode(sql);
+            //執行sql指令 然後得到response
+            String response = DBHandler.query(sql);
+            Log.e("response", response);
+            if (response.equals("") || response.equals("\uFEFFnull")) {
+                // login fail
+                Toast.makeText(LoginActivity.this, getString(R.string.txt_Login_fail), Toast.LENGTH_SHORT).show();
+            } else {
+                try {
+                    JSONArray jsonArray = new JSONArray(response);
+                    JSONObject jsonData = jsonArray.getJSONObject(0);
+                    Log.e("jsonData", jsonData.getString("account") + "  " + jsonData.get("password"));
+                    //暫存使用者帳號
+                    SharedPreferences settings;
+                    settings = getSharedPreferences("User", 0);
+                    settings.edit().putString("account", jsonData.getString("account")).apply();
+                    //Go to MainActivity
+                    Intent i = new Intent();
+                    i.setClass(LoginActivity.this, MainActivity.class);
+                    startActivity(i);
 
-            } catch (JSONException e) {
-                e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
             }
         }
+        else{
+            Toast.makeText(LoginActivity.this, getString(R.string.txt_WiFi_fail), Toast.LENGTH_SHORT).show();
+        }
+    }
+    private boolean isInternetConnected()
+    {
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService
+                (CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo= connectivityManager .getActiveNetworkInfo();
+        return networkInfo != null && networkInfo.isConnected();
     }
 }

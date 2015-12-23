@@ -19,6 +19,8 @@
     <string name="txt_WiFi_fail">網路不穩</string>
     <string name="txt_NoRecord">查無紀錄</string>
     <string name="txt_ReportRecord_title">通報紀錄</string>
+    <string name="txt_MainActivity_title">主畫面</string>
+    <string name="txt_SignUpActivity_title">註冊</string>
     <string name="btn_main_picturReport_name">照片通報</string>
     <string name="btn_main_mapInfo_name">道路狀況</string>
     <string name="btn_main_ReportRecord_name">通報紀錄</string>

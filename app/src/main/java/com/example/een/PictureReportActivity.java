@@ -9,11 +9,14 @@ import android.location.Address;
 import android.location.Geocoder;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.Handler;
+import android.os.Message;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.io.DataOutputStream;
 import java.io.File;
@@ -68,6 +71,7 @@ public class PictureReportActivity extends AppCompatActivity {
             List<Address> lstAddress = null;
             Double longitude = Double.parseDouble(str_longitude);	//取得經度
             Double latitude = Double.parseDouble(str_latitude);	//取得緯度
+            //取得地址資訊
             lstAddress = gc.getFromLocation(latitude, longitude, 1);
             String returnAddress = lstAddress.get(0).getAddressLine(0);
             Log.e("returnAddress",returnAddress);
@@ -86,17 +90,27 @@ public class PictureReportActivity extends AppCompatActivity {
             Thread t = new Thread(new Runnable() {
                 public void run() {
                     uploadFile();
+                    showToast("上傳成功");
+                    Message msgg = new Message();//component要交給Handler處理
+                    msgg.what = 1;
+                    handler.sendMessage(msgg);
                 }
             });
             t.start();
-            try {
-                t.join();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
         finish();
     }
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msgg) {
+            switch(msgg.what){
+                case 1:
+                    finish();//更新listView
+                    break;
+            }
+            super.handleMessage(msgg);
+        }
+    };
     //上傳
     private void uploadFile()
     {
@@ -168,5 +182,13 @@ public class PictureReportActivity extends AppCompatActivity {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public void showToast(final String toast)   //把它寫成function  有些時候可以避免Bug 例如在thread裡使用他
+    {
+        runOnUiThread(new Runnable() {
+            public void run() {
+                Toast.makeText(PictureReportActivity.this, toast, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

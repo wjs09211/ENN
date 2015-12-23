@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -18,11 +19,12 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_pictureReport;
     private Button btn_mapInfo;
     private Button btn_reportRecord;
-    private Button btn_logout;
+    private ImageButton btn_logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle(R.string.txt_MainActivity_title);
         initComponent();
         //Go to PictureReportActivity
         btn_pictureReport.setOnClickListener(new View.OnClickListener() {
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         btn_pictureReport = (Button)findViewById(R.id.btn_main_pictureReport);
         btn_mapInfo = (Button)findViewById(R.id.btn_main_mapInfo);
         btn_reportRecord = (Button)findViewById(R.id.btn_main_ReportRecord);
-        btn_logout = (Button)findViewById(R.id.btn_main_logout);
+        btn_logout = (ImageButton)findViewById(R.id.btn_main_logout);
     }
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

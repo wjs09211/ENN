@@ -35,6 +35,7 @@ public class ReportRecordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_report_record);
+        setTitle(R.string.txt_ReportRecord_title);
         str_User = getUserAccount();
         new Thread(new Runnable() {
             @Override

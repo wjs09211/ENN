@@ -138,7 +138,7 @@ public class MyAdapter extends BaseAdapter implements AbsListView.OnScrollListen
         if (bitmap != null) {
             imageView.setImageBitmap(bitmap);
         } else {
-            //imageView.setImageResource(R.drawable.empty_photo);
+            imageView.setImageResource(R.drawable.loading);
         }
     }
     public void addBitmapToMemoryCache(String key, Bitmap bitmap) {

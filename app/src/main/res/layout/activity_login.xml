@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/edit_account"
         android:maxLength="20"
+        android:textSize="25dp"
         android:hint="@string/txt_hint_account"
         android:singleLine="true"
         android:layout_above="@+id/edit_password"
@@ -31,6 +32,7 @@
         android:ems="10"
         android:id="@+id/edit_password"
         android:maxLength="20"
+        android:textSize="25dp"
         android:hint="@string/txt_hint_password"
         android:singleLine="true"
         android:layout_above="@+id/btn_login"
@@ -40,33 +42,41 @@
         android:textColorHint="@color/colorHint" />
 
     <Button
-        android:layout_width="fill_parent"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/btn_login_name"
         android:id="@+id/btn_login"
-        android:background="@color/colorButton"
-        android:layout_above="@+id/btn_SignUp"
+        android:background="@drawable/shape_login"
+        android:textColor="@color/colorText"
+        android:textSize="20dp"
+        android:layout_alignTop="@+id/btn_SignUp"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="29dp"
-        android:textColor="@color/colorText" />
+        android:layout_marginStart="45dp"
+        android:singleLine="false"
+        android:textStyle="normal|bold|italic" />
 
     <Button
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btn_register_name"
         android:id="@+id/btn_SignUp"
-        android:background="@color/colorButton"
+        android:background="@drawable/shape_signup"
+        android:textColor="#CAFF4081"
+        android:textSize="20dp"
+        android:layout_marginBottom="20dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="36dp"
-        android:textColor="@color/colorText" />
+        android:layout_toEndOf="@+id/btn_login"
+        android:layout_marginStart="52dp"
+        android:textStyle="normal|bold|italic" />
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
         android:id="@+id/imageView"
-        android:background="@drawable/car"
+        android:background="@drawable/logo"
         android:layout_above="@+id/edit_account"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="50dp" />
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        />
 </RelativeLayout>

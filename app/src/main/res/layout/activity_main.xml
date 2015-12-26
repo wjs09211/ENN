@@ -27,7 +27,7 @@
             android:id="@+id/btn_main_pictureReport"
             android:layout_weight="0.1"
             android:textColor="@color/colorText"
-            android:background="@color/colorButton"
+            android:background="@drawable/shape"
             android:layout_marginBottom="20dp"
             android:layout_marginTop="20dp"
             android:textSize="30dp"
@@ -43,7 +43,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.1"
             android:textColor="@color/colorText"
-            android:background="@color/colorButton"
+            android:background="@drawable/shape"
             android:layout_marginBottom="20dp"
             android:textSize="30dp"
             android:paddingLeft="30dp"
@@ -58,7 +58,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_weight="0.1"
             android:textColor="@color/colorText"
-            android:background="@color/colorButton"
+            android:background="@drawable/shape"
             android:layout_marginBottom="20dp"
             android:textSize="30dp"
             android:paddingLeft="30dp"
@@ -74,7 +74,8 @@
             android:textColor="@color/colorText"
             android:textSize="30dp"
             android:src="@drawable/logout"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:background="#00000000"/>
     </LinearLayout>
 
     <TextView
